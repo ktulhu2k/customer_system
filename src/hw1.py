@@ -8,5 +8,5 @@ c1.add_order(o2)
 
 print_customer_report(c1)
 
-c2=Customer(2,"Empty Customer")
+c2 = Customer(2,"Empty Customer")
 print_customer_report(c2) 
