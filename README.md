@@ -18,7 +18,7 @@ Python-скрипт для управления данными клиентов,
 ##  Установка
 
 1. Клонируйте репозиторий:
-   git clone https://github.com/ktulhu2k/customer_system/
+   git clone https://github.com/ktulhu2k/customer_system.git
 cd customer_system
 
 2. Убедитесь, что у вас установлен Python 3.7+
