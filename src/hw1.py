@@ -1,3 +1,8 @@
+"""Модуль для демонстрации работы с клиентами и заказами.
+
+Создает клиентов и заказы, добавляет заказы клиентам и выводит отчет.
+"""
+
 from customer_system import Customer, Order, print_customer_report
 
 c1 = Customer(1,"SAP Customer")
