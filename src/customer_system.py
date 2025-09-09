@@ -1,11 +1,10 @@
-"""
-Модуль для управления данными клиентов и заказов.
+"""Модуль для управления данными клиентов и заказов.
+
 Предоставляет функционал для расчета скидок и генерации отчетов.
 """
 
 class Customer:
-    """
-    Класс для представления клиента и его заказов.
+    """Класс для представления клиента и его заказов.
     
     Attributes:
         customer_id (int): Уникальный идентификатор клиента
@@ -14,8 +13,7 @@ class Customer:
     """
     
     def __init__(self, customer_id: int, customer_name: str) -> None:
-        """
-        Инициализирует объект клиента.
+        """Инициализирует объект клиента.
         
         Args:
             customer_id: Уникальный идентификатор клиента
@@ -23,11 +21,10 @@ class Customer:
         """
         self.customer_id = customer_id
         self.customer_name = customer_name
-        self.orders: List['Order'] = []
+        self.orders = []
 
     def add_order(self, order: 'Order') -> None:
-        """
-        Добавляет заказ в список заказов клиента.
+        """Добавляет заказ в список заказов клиента.
         
         Args:
             order: Объект заказа для добавления
@@ -35,8 +32,7 @@ class Customer:
         self.orders.append(order)
 
     def get_total_amount(self) -> float:
-        """
-        Вычисляет общую сумму всех заказов клиента.
+        """Вычисляет общую сумму всех заказов клиента.
         
         Returns:
             float: Общая сумма заказов
@@ -45,8 +41,7 @@ class Customer:
 
 
 class Order:
-    """
-    Класс для представления заказа.
+    """Класс для представления заказа.
     
     Attributes:
         order_id (int): Уникальный идентификатор заказа
@@ -54,8 +49,7 @@ class Order:
     """
     
     def __init__(self, order_id: int, amount: float) -> None:
-        """
-        Инициализирует объект заказа.
+        """Инициализирует объект заказа.
         
         Args:
             order_id: Уникальный идентификатор заказа
@@ -66,8 +60,7 @@ class Order:
 
 
 def calculate_discount(customer: Customer) -> float:
-    """
-    Рассчитывает скидку для клиента на основе общей суммы заказов.
+    """Рассчитывает скидку для клиента на основе общей суммы заказов.
     
     Скидка в размере 10% предоставляется, если общая сумма заказов
     превышает 1000 единиц.
@@ -86,8 +79,7 @@ def calculate_discount(customer: Customer) -> float:
 
 
 def print_customer_report(customer_obj) -> None:
-    """
-    Выводит детальный отчет по клиенту и его заказам.
+    """Выводит детальный отчет по клиенту и его заказам.
     
     Отчет включает:
     - Имя клиента
@@ -99,9 +91,9 @@ def print_customer_report(customer_obj) -> None:
     Args:
         customer: Объект клиента для генерации отчета
     """
-    print("Customer Report for:", customer_obj.customer_name )
-    print("Total Orders:", len(customer_obj.orders))
+    print('Customer Report for:', customer_obj.customer_name )
+    print('Total Orders:', len(customer_obj.orders))
     total_amount = customer_obj.get_total_amount()
-    print("Total Amount:", total_amount)
-    print("Discount:", calculate_discount(customer_obj))
-    print("Average Order:", total_amount / len(customer_obj.orders) if customer_obj.orders else "-")
+    print('Total Amount:', total_amount)
+    print('Discount:', calculate_discount(customer_obj))
+    print('Average Order:', total_amount / len(customer_obj.orders) if customer_obj.orders else '-')
